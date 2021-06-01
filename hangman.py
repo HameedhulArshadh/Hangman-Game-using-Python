@@ -11,10 +11,11 @@ def hands():
     print("===============")
     print("--------\n    |\n    😱\n    /|\\")
     
-def legs():
+def legs(word):
     print("===============")
     print("You Lost 😑  😑")
     print("--------\n    |\n    😵\n    /|\\\n    / \\")
+    print(word)
     
 def refresh():
     words = ["apple","orange","pineapple","papaya", "acerolo","apricot","avocado","banana","strawberry","blackberry","blackcurrant","carambola","cherimoya", "cherries", "clementine", "grapes", "kiwi"]
@@ -68,7 +69,7 @@ while lives!=0 and win ==0:
             elif(lives ==1):
                 hands()
             else:
-                legs()
+                legs(word)
         else:
             print("You already guessed it, try other word")
         
