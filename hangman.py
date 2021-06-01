@@ -75,4 +75,5 @@ while lives!=0 and win ==0:
     if(dispWord == wordlist):
         win = 1;
         wins()
+        print(dispWord)
         
