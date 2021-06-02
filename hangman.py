@@ -1,18 +1,19 @@
 from random import randint
+import time
 def head():
-    print("===============")
+    print("================")
     print("--------\n    |\n    😁")
 
 def body():
-    print("===============")
+    print("================")
     print("--------\n    |\n    😰\n     |")
 
 def hands():
-    print("===============")
+    print("================")
     print("--------\n    |\n    😱\n    /|\\")
     
 def legs(word):
-    print("===============")
+    print("================")
     print("You Lost 😑  😑")
     print("--------\n    |\n    😵\n    /|\\\n    / \\")
     print(word)
@@ -32,7 +33,7 @@ def display(wordlist,dispWord,key): #wordlist,dispWord,letter
     return dispWord
 
 def wins():
-    print(" You've won 🥳  🥳  🥳")
+    print("You've won 🥳  🥳  🥳")
     
   
 lives = 4
@@ -47,8 +48,10 @@ win = 0
 guess = set()
 
 while lives!=0 and win ==0:
+    time.sleep(1)
+    print("\n\n")
     print(dispWord)
-    print()
+    print("You've {} more lives\n".format(lives))
     letter = input("Enter a letter:")
     if(letter in word):
         if(letter not in guess):
