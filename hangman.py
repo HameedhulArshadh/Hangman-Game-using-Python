@@ -34,7 +34,13 @@ def display(wordlist,dispWord,key): #wordlist,dispWord,letter
 
 def wins():
     print("You've won 🥳  🥳  🥳")
-    
+    print(word)
+    input("Press enter to exit")
+
+def loses():
+    print("You Lost 😑  😑")
+    print(word)
+    input("Press enter to exit")    
   
 lives = 4
 word = refresh()
@@ -48,36 +54,39 @@ win = 0
 guess = set()
 
 while lives!=0 and win ==0:
+    print("="*50)
     time.sleep(1)
     print("\n\n")
     print(dispWord)
     print("You've {} more lives\n".format(lives))
     letter = input("Enter a letter:")
-    if(letter in word):
-        if(letter not in guess):
+    if letter in word:
+        if letter not in guess:
             guess.add(letter)
             print("good guess  🎉")
             dispWord = display(wordlist,dispWord,letter)
         else:
             print("You already guessed it, try other word")
     else:
-        if (letter not in guess):
+        if letter not in guess:
             lives -=1
             guess.add(letter)
             print("bad guess  🤡")
-            if(lives == 3):
+            if lives == 3:
                 head()
-            elif(lives == 2):
+            elif lives == 2:
                 body()
-            elif(lives ==1):
+            elif lives ==1:
                 hands()
             else:
                 legs(word)
         else:
             print("You already guessed it, try other word")
         
-    if(dispWord == wordlist):
+    if dispWord == wordlist:
         win = 1;
         wins()
-        print(dispWord)
+ 
+    if lives == 0:
+        loses()
         
